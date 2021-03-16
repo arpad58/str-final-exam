@@ -7,7 +7,7 @@
         <label>Name</label>
         <!-- Validation: min 8 char, max 40 char, required -->
         <input
-        class="form-control"
+        class="form-control" pattern=".{8,40}" required
         type="text"
         name="name"
         [(ngModel)]="user.name">
@@ -17,7 +17,7 @@
         <!-- Validation: valid email, required.
           Help: https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript -->
           <input
-          class="form-control"
+          class="form-control" pattern="" required
           type="text"
           name="email"
           [(ngModel)]="user.email">
@@ -26,7 +26,7 @@
           <label>Address</label>
           <!-- Validation: min 8 char, max 100 char, required -->
           <input
-          class="form-control"
+          class="form-control" pattern="" required
           type="text"
           name="address"
           [(ngModel)]="user.address">
