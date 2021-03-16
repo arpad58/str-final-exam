@@ -22,7 +22,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of users$ | async">
+        <tr *ngFor="let user of users$ | async | filter: phrase: 'name'">
           <td>{{ user.id }}</td>
           <td>{{ user.name }}</td>
           <td>{{ user.email }}</td>
