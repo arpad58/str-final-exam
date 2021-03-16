@@ -12,6 +12,8 @@ export class UserListComponent implements OnInit {
 
   users$: Observable<User[]> = this.userService.getAll();
 
+  phrase: string = '';
+
   constructor(
     private userService: UserService,
   ) { }
@@ -20,12 +22,16 @@ export class UserListComponent implements OnInit {
   }
 
   onDelete(user: User): void {
-    alert('are you sure want to delete?');
+    alert('Biztos szeretné törölni?');
     this.userService.delUser(user).subscribe(
       () => {
          this.users$ = this.userService.getAll();
        }
     );
+  }
+
+  onChangePhrase(event: Event): void {
+    this.phrase = (event.target as HTMLInputElement).value;
   }
 
 }

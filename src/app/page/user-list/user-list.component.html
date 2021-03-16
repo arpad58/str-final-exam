@@ -1,6 +1,15 @@
 <div class="row">
   <div class="col-12 mt-2">
     <h2>User List</h2>
+    <div>
+      <input
+        (keyup)="onChangePhrase($event)"
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+    </div>
     <table class="table table-striped">
       <thead>
         <tr>
