@@ -10,13 +10,16 @@ import { UserListComponent } from './page/user-list/user-list.component';
 import { UserEditorComponent } from './page/user-editor/user-editor.component';
 import { FilterPipe } from './pipe/filter.pipe';
 
+import { SortPipe } from './pipe/sort.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     UserListComponent,
     UserEditorComponent,
-    FilterPipe
+    FilterPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,

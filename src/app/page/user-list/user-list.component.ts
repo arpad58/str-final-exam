@@ -13,6 +13,8 @@ export class UserListComponent implements OnInit {
   users$: Observable<User[]> = this.userService.getAll();
 
   phrase: string = '';
+  direction: number = 1;
+  columnKey: string = '';
 
   constructor(
     private userService: UserService,
@@ -32,6 +34,15 @@ export class UserListComponent implements OnInit {
 
   onChangePhrase(event: Event): void {
     this.phrase = (event.target as HTMLInputElement).value;
+  }
+
+  onColumnSelect(key: string): void {
+    if (this.columnKey === key) {
+      this.direction = this.direction * -1;
+    } else {
+      this.direction = 1;
+    }
+    this.columnKey = key;
   }
 
 }
