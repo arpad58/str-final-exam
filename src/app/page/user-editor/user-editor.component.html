@@ -11,6 +11,9 @@
         type="text"
         name="name"
         [(ngModel)]="user.name">
+        <div [hidden]="userForm.controls.name?.valid || userForm.controls.name.pristine" class="error-message">
+          Minimum 8 character, maximum 40 character.
+        </div>
       </div>
       <div class="form-group">
         <label>Email</label>
@@ -21,6 +24,9 @@
           type="text"
           name="email"
           [(ngModel)]="user.email">
+          <div [hidden]="userForm.controls.email?.valid || userForm.controls.email.pristine" class="error-message">
+            Not valid email
+          </div>
         </div>
         <div class="form-group">
           <label>Address</label>
@@ -30,6 +36,9 @@
           type="text"
           name="address"
           [(ngModel)]="user.address">
+          <div [hidden]="userForm.controls.address?.valid || userForm.controls.address.pristine" class="error-message">
+            Minimum 8 character, maximum 100 character.
+          </div>
       </div>
       <div class="form-group">
         <label>Active</label>
