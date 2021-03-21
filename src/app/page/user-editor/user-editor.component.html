@@ -18,7 +18,8 @@
       <div class="form-group">
         <label>Email</label>
         <!-- Validation: valid email, required.
-          Help: https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript -->
+          Help: https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+           Ez is működik [pattern]="emailPattern" required-->
           <input
           class="form-control" pattern="^.{3,}@{1}.{3,}\.{1}[a-z]{2,}$" required
           type="text"
@@ -37,7 +38,7 @@
           name="address"
           [(ngModel)]="user.address">
           <div [hidden]="userForm.controls.address?.valid || userForm.controls.address.pristine" class="error-message">
-            Minimum 8 character, maximum 100 character.
+            Minimum 8 characters, maximum 100 characters.
           </div>
       </div>
       <div class="form-group">
@@ -48,7 +49,7 @@
           <option [ngValue]="false">inactive</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-primary btn-block mt-5">
+      <button [disabled]="userForm.invalid" type="submit" class="btn btn-primary btn-block mt-5">
         <i class="fa fa-save"></i>
       </button>
     </form>
